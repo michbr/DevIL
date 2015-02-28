@@ -15,15 +15,15 @@
 
 
 // Local headers
-/*#if (defined(_WIN32) || defined(_WIN64)) && !defined(HAVE_CONFIG_H)
-	#define HAVE_CONFIG_H
-#endif*/
-#ifdef HAVE_CONFIG_H //if we use autotools, we have HAVE_CONFIG_H defined and we have to look for it like that
-	#include <config.h>
-#else // If we do not use autotools, we have to point to (possibly different) config.h than in the opposite case
-	#include <IL/config.h>
-#endif
-
+//#if (defined(_WIN32) || defined(_WIN64)) && !defined(HAVE_CONFIG_H)
+//	#define HAVE_CONFIG_H
+//#endif
+//#define HAVE_CONFIG_H
+//#ifdef HAVE_CONFIG_H //if we use autotools, we have HAVE_CONFIG_H defined and we have to look for it like that
+	//#include <config.h>
+//#else // If we do not use autotools, we have to point to (possibly different) config.h than in the opposite case
+//	#include <IL/config.h>
+//#endif
 // Standard headers
 #include <stdlib.h>
 #include <stdio.h>
@@ -59,9 +59,10 @@ extern "C" {
 	#define IL_NO_UTX
 	#define IL_NO_WAL
 #endif//IL_NO_GAMES
-
+#define IL_NO_UTX
 // If we want to compile without support for formats supported by external libraries,
 //  this define will remove them all.
+#define IL_NO_EXTLIBS
 #ifdef IL_NO_EXTLIBS
 	#define IL_NO_EXR
 	#define IL_NO_JP2

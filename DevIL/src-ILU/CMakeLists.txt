@@ -22,7 +22,7 @@ IF(WIN32)
 		ADD_DEFINITIONS(-DILU_DLL)
 		SET(ILU_SRCS ${ILU_SRCS} msvc/ilu.def)
 		SET(ILU_RSRC ${ILU_RSRC} "msvc/resources/IL Logo.ico" msvc/ILU.rc)
-		SET(CMAKE_C_FLAGS_RELEASE "/MT /O2")
+		#SET(CMAKE_C_FLAGS_RELEASE "/MT /O2")
 	ELSE(BUILD_SHARED_LIBS)
 		ADD_DEFINITIONS(-DIL_STATIC_LIB)
 	ENDIF(BUILD_SHARED_LIBS)
@@ -32,6 +32,15 @@ ENDIF(WIN32)
 SOURCE_GROUP("Source Files" FILES src/*.c)
 SOURCE_GROUP("Header Files" FILES ${ILU_INC} )
 SOURCE_GROUP("Resource Files" FILES ${ILU_RSRC} )
+
+message("${DevIL_SOURCE_DIR}/include")
+message("${DevIL_SOURCE_DIR}/../include")
+
+INCLUDE_DIRECTORIES(
+
+	${DevIL_SOURCE_DIR}/../include
+	${DevIL_SOURCE_DIR}/include
+)
 
 # Remove SHARED to create a static library
 ADD_LIBRARY(ILU SHARED ${ILU_SRCS} ${ILU_INC} ${ILU_RSRC})
@@ -44,8 +53,4 @@ TARGET_LINK_LIBRARIES(ILU
 	DevIL
 )
 
-INCLUDE_DIRECTORIES(
 
-	${DevIL_SOURCE_DIR}/../include
-	${DevIL_SOURCE_DIR}/include
-)

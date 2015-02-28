@@ -6,6 +6,8 @@ PROJECT(ImageLib)
 
 OPTION(BUILD_SHARED_LIBS "Build with shared (.DLL .SO) libraries." ON)
 
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CUSTOM_FLAGS} -std=c++11")
+
 
 SET(DEVIL_INCS
 
@@ -39,6 +41,10 @@ ELSE(BUILD_SHARED_LIBS)
 
 ENDIF(BUILD_SHARED_LIBS)
 
+message(${DEVIL_LIB_DEST_DIR})
+message("${CMAKE_SOURCE_DIR}/include")
+include_directories("${CMAKE_SOURCE_DIR}/include")
+include_directories("${CMAKE_SOURCE_DIR}/include/IL")
 
 
 EXPORT_LIBRARY_DEPENDENCIES(CMakeDepends.txt)

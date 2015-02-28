@@ -15,7 +15,6 @@
 #ifdef ALTIVEC_GCC
 #include "altivec_typeconversion.h"
 #endif
-#include <limits.h>
 
 
 void* ILAPIENTRY iSwitchTypes(ILuint SizeOfData, ILenum SrcType, ILenum DestType, void *Buffer);
@@ -84,7 +83,7 @@ ILAPI void* ILAPIENTRY ilConvertBuffer(ILuint SizeOfData, ILenum SrcFormat, ILen
 		PalImage->Depth = 1;
 		PalImage->Format = IL_COLOUR_INDEX;
 		PalImage->Type = IL_UNSIGNED_BYTE;
-		PalImage->Data = Buffer;
+		PalImage->Data = (ILubyte *)Buffer;
 		PalImage->Bpp = 1;
 		PalImage->SizeOfData = SizeOfData;
 

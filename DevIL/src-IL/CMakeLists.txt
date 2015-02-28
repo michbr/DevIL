@@ -1,6 +1,6 @@
 PROJECT(DevIL)
 
-FILE(GLOB DevIL_SRCS src/*.c)
+FILE(GLOB DevIL_SRCS src/*.c src/*.cc)
 FILE(GLOB DevIL_INC include/*.h ../include/IL/config.h ../include/IL/devil_internal_exports.h ../include/IL/il.h)
 FILE(GLOB DevIL_RSRC)
 FILE(GLOB DevIL_TXT)
@@ -27,7 +27,7 @@ IF(WIN32)
 		SET(DevIL_RSRC ${DevIL_RSRC} "msvc/resources/IL Logo.ico" msvc/IL.rc)
 		SET(DevIL_TXT ${DevIL_TXT} ../AUTHORS ../ChangeLog ../CREDITS ../libraries.txt ../MSVC++.txt ../README.unix ../README.win ../TODO)
 #		SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /NODEFAULTLIB:msvcrt.lib ")
-		SET(CMAKE_C_FLAGS_RELEASE "/MT /O2")
+		#SET(CMAKE_C_FLAGS_RELEASE "/MT /O2")
 	ELSE(BUILD_SHARED_LIBS)
 		ADD_DEFINITIONS(-DIL_STATIC_LIB -DJPEGSTATIC)
 	ENDIF(BUILD_SHARED_LIBS)
@@ -43,14 +43,14 @@ ADD_LIBRARY(DevIL SHARED ${DevIL_SRCS} ${DevIL_INC} ${DevIL_RSRC} ${DevIL_TXT})
 
 ## add link sub library info
 
-TARGET_LINK_LIBRARIES(DevIL
-	lcms
-	libjpeg
-	libmng
-	libpng
-	libtiff
-	zlib
-)
+#TARGET_LINK_LIBRARIES(DevIL
+#	lcms
+#	libjpeg
+#	libmng
+#	libpng
+#	libtiff
+#	zlib
+#)
 
 INCLUDE_DIRECTORIES(
 

@@ -1,19 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IL", "..\..\src-IL\msvc9\IL.vcproj", "{B46B180B-6079-4CE6-8647-A7D712774255}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILU", "..\..\src-ILU\msvc9\ILU.vcproj", "{CCEBAA77-521A-4CC3-A4E0-C6B062FC2009}"
-	ProjectSection(ProjectDependencies) = postProject
-		{B46B180B-6079-4CE6-8647-A7D712774255} = {B46B180B-6079-4CE6-8647-A7D712774255}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILUT", "..\..\src-ILUT\msvc9\ILUT.vcproj", "{7D060DA4-F2FA-44CC-80BE-065024DD6CA9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{B46B180B-6079-4CE6-8647-A7D712774255} = {B46B180B-6079-4CE6-8647-A7D712774255}
-		{CCEBAA77-521A-4CC3-A4E0-C6B062FC2009} = {CCEBAA77-521A-4CC3-A4E0-C6B062FC2009}
-	EndProjectSection
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Text Files", "Solution Text Files", "{8613D7AA-0767-4567-87E5-E84C82F2FC93}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\AUTHORS = ..\..\AUTHORS
@@ -26,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Text Files", "Solu
 		..\..\README.win = ..\..\README.win
 		..\..\TODO = ..\..\TODO
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IL", "..\..\src-IL\msvc9\IL.vcxproj", "{B46B180B-6079-4CE6-8647-A7D712774255}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILU", "..\..\src-ILU\msvc9\ILU.vcxproj", "{CCEBAA77-521A-4CC3-A4E0-C6B062FC2009}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILUT", "..\..\src-ILUT\msvc9\ILUT.vcxproj", "{7D060DA4-F2FA-44CC-80BE-065024DD6CA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
